@@ -1,0 +1,2 @@
+class RoomTypeController < ApplicationController
+end
