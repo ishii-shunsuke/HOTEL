@@ -12,20 +12,22 @@ Rails.application.routes.draw do
 }
 
 
- root 'users/reservations#top'
- namespace :users do
+  root 'users/reservations#top'
+  namespace :users do
+ 	resources :reservations do
+ 		resources :plans
+ 	end
+ 	resources :room_types
+  end
+  resources :facilities, only: [:index]
+
+  namespace :admins do
  	resources :reservations
  	resources :plans
  	resources :room_types
- end
- resources :facilities, only: [:index]
+  end
 
- namespace :admins do
- 	resources :reservations
- 	resources :plans
- 	resources :room_types
 
- end
 
 
 end
