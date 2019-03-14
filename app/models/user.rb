@@ -22,6 +22,24 @@ class User < ApplicationRecord
 
 
 
-  has_many :plans
-  has_many :reservations, through: :plans
+  has_many :reservations
+  has_many :plans, through: :reservations
+
+
+
+  validates :last_name, presence: true
+  validates :first_name, presence: true
+  validates :last_name_kana, presence: true
+  validates :first_name_kana, presence: true
+  validates :birthday, presence: true
+  validates :gender, presence: true
+  validates :phone_number, presence: true
+  validates :phone_number, length: { in:10..15 }
+  validates :post_number, presence: true
+  validates :post_number, length: { in:7..8 }
+  validates :prefectures, presence: true
+  validates :city, presence: true
+  validates :block, presence: true
+
+
 end

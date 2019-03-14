@@ -24,18 +24,34 @@
 	<% end %>
 	<div class="row">
 		<div class="col text-center">
-		  <h3>スタンダードプラン（素泊まり）</h3>
+			<h3>スタンダードプラン（素泊まり）</h3>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col text-center">
-		  <p class="text-center">・出張などビジネスでのお客様も、ご家族やカップル、お友達同士などでお出掛けの<br>
-              お客様にも、幅広くご利用頂けます</p>
-        </div>
+			<p class="text-center">・出張などビジネスでのお客様も、ご家族やカップル、お友達同士などでお出掛けの<br>
+			お客様にも、幅広くご利用頂けます</p>
+		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-3">
-			<%= image_tag 'business.jpg', :size =>'100x100'　%>
+			<%= image_tag("business.jpg", :size => "300x350") %>
+		</div>
+		<%= @plans.each do |plan| %>
+		<%= form_for(plan) do |f| %>
+		<div class="col-md-2 offset-1">
+			<h5><%= plan.room_type.room_type_name %></h5>
+		</div>
+		<div class="col-md-2">
+			<h5><%= plan.price %>円</h5>
+		</div>
+		<div class="col-md-1">
+			<%= f.submit '予約する', class: "btn btn-success btn-enter mt-4" %>
+		</div>
+		<% end %>
+		<% end %>
+	</div>
+	<div class="row">
+		<div class="col text">
 		</div>
 	</div>
-</div>
