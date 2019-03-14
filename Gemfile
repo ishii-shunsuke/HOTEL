@@ -68,3 +68,4 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'ransack'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
+gem "pry-rails"

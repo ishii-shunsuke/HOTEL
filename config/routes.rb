@@ -13,13 +13,25 @@ Rails.application.routes.draw do
 
 
   root 'users/reservations#top'
+
   namespace :users do
- 	resources :reservations do
- 		resources :plans
- 	end
- 	resources :room_types
+    resources :facilities do
+      collection do
+        get :restaurant
+      end
+        get :access
+      end
+    resources :reservations do
+      member do
+        get :destroy_when_reservation
+      end
+      collection do
+        get :destroy_complete
+      end
+      resources :plans
+    end
+    resources :room_types, only: [:index]
   end
-  resources :facilities, only: [:index]
 
   namespace :admins do
  	resources :reservations
