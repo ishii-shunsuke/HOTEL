@@ -1,6 +1,6 @@
-
-<div class="container">
-	<%= form_for @reservation,url:users_reservations_path do |f| %>
+<div class="top-image">
+ <div class="container">
+	<%= search_form_for(@search, url: new_users_reservation_path, method: :get) do |f| %>
 	<div class="row">
 		<div class="input col-md-2">
 			<%= f.label :reservation_date,"チェックイン" %>
@@ -23,4 +23,5 @@
 		</div>
 	</div>
 	<% end %>
+ </div>
 </div>

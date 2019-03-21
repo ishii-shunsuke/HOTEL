@@ -14,5 +14,14 @@
  *= require_self
  */
  @import "bootstrap";
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
+
+nav {
+	margin-bottom: 80px;
+	background-color: #8c6f6d;
+	color: black;
+}
+
 
 

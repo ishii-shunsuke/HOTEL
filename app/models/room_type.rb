@@ -1,4 +1,5 @@
 class RoomType < ApplicationRecord
 
- belongs_to :plan
+ has_many :rooms
+ has_many :plans, through: :rooms
 end
