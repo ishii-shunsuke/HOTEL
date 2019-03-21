@@ -1,0 +1,140 @@
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+      <h1 class="access-title">アクセス情報</h1>
+    </div>
+  </div>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZsrGtrVkpJ-75RIU8RgG_O6a9OxJjXqg" type="text/javascript"></script>
+
+  <script type="text/javascript">
+
+    //COMTOPIA流Google MAP表示方法
+
+    var geocoder = new google.maps.Geocoder();//Geocode APIを使います。
+
+    var address = "神奈川県横浜市鶴見区矢向2-8-24";
+
+    geocoder.geocode({'address': address,'language':'ja'},function(results, status){
+
+      if (status == google.maps.GeocoderStatus.OK){
+
+            var latlng=results[0].geometry.location;//緯度と経度を取得
+
+            var mapOpt = {
+
+                center: latlng,//取得した緯度経度を地図の真ん中に設定
+
+                zoom: 15,//地図倍率1～20
+
+                mapTypeId: google.maps.MapTypeId.ROADMAP//普通の道路マップ
+
+              };
+
+              var map = new google.maps.Map(document.getElementById('google_map'),mapOpt);
+
+            var marker = new google.maps.Marker({//住所のポイントにマーカーを立てる
+
+              position: map.getCenter(),
+
+              map: map
+
+            });
+
+          }else{
+
+            alert("Geocode was not successful for the following reason: " + status);
+
+          }
+
+        });
+
+      </script>
+
+      <div id="google_map" style="width:100%;height:500px"></div>
+
+
+      <div class="box1">
+        <div class="row">
+          <div class="col-md-3 offset-2">
+            <div class="time-infomation text-center">
+              <h4>所在地</h4>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="time">
+              <h4>神奈川県横浜市鶴見区矢向</h4>
+            </div>
+          </div>
+          <div class="map-border"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 offset-2">
+            <div class="place-information text-center">
+              <h4>TEL</h4>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="place">
+              <h4>045-000-1111</h4>
+            </div>
+          </div>
+          <div class="map-border"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 offset-2">
+            <div class="place-information text-center">
+              <h4>FAX</h4>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="place">
+              <h4>045-111-0000</h4>
+            </div>
+          </div>
+          <div class="map-border"></div>
+        </div>
+        <div class="row">
+          <div class="col-md-3 offset-2">
+            <div class="place-information text-center">
+              <h4>MAIL</h4>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="place">
+              <h4>aaabbbccc@gmail.com</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="border"></div>
+      <div class="row">
+        <div class="col text-center">
+          <h2 class="access-subtitle">交通アクセス情報</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <i class="fas fa-train fa-8x text-center"></i>
+          <p class="traffic-guide">JR尻手駅から徒歩7分</p>
+        </div>
+        <table style="height: 200px; width: 1px; background-color: gray; border-collapse: collapse;">
+          <tr>
+            <td></td>
+          </tr>
+        </table>
+        <div class="col-md-3 text-center">
+          <i class="fas fa-car fa-8x text-center"></i>
+          <p class="traffic-guide">神奈川1号横羽線 生麦 上り 出口より約5分</p>
+        </div>
+        <table style="height: 200px; width: 1px; background-color: gray; border-collapse: collapse;">
+          <tr>
+            <td></td>
+          </tr>
+        </table>
+        <div class="col-md-4 text-center">
+          <i class="fas fa-plane fa-8x text-center"></i>
+          <p class="traffic-guide">羽田空港より、リムジンバスで約1時間</p>
+        </div>
+      </div>
+    </div>

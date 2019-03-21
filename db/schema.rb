@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_14_124022) do
+ActiveRecord::Schema.define(version: 2019_03_21_121133) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 2019_03_14_124022) do
     t.date "checkout_date"
     t.integer "user_id"
     t.integer "plan_id"
+    t.integer "room_type_id"
   end
 
   create_table "room_types", force: :cascade do |t|
@@ -83,6 +84,14 @@ ActiveRecord::Schema.define(version: 2019_03_14_124022) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "plan_id"
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.integer "plan_id"
+    t.integer "room_type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "price"
   end
 
   create_table "users", force: :cascade do |t|

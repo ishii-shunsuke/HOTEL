@@ -1,6 +1,5 @@
 class Reservation < ApplicationRecord
 
- has_many :plans
- has_many :users, through: :plans
-
+ belongs_to :user, optional: true
+ belongs_to :plan
 end

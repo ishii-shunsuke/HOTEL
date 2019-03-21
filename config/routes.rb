@@ -18,9 +18,9 @@ Rails.application.routes.draw do
     resources :facilities do
       collection do
         get :restaurant
-      end
         get :access
       end
+    end
     resources :reservations do
       member do
         get :destroy_when_reservation

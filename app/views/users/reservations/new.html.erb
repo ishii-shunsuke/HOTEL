@@ -1,0 +1,34 @@
+<div class="container">
+<% @plans.each do |plan| %>
+<%= form_for @reservation, url: users_reservations_path do |f| %>
+	<div class="row">
+		<div class="col text-center">
+			<h3><%= plan.plan_name %></h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col text-center">
+			<p class="text-center"><%= plan.plan_description %></p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3">
+			<%= image_tag("business.jpg", :size => "300x350") %>
+		</div>
+		   
+		
+		<% plan.rooms.each do |room| %>
+		<div class="col-md-2 offset-1">
+			<h5><%= room.room_type.room_type_name %></h5>
+		</div>
+		<div class="col-md-2">
+			<h5><%= room.price %>円</h5>
+		</div>
+		<div class="col-md-1">
+			<%= f.submit '予約する', class: "btn btn-success btn-enter mt-4" %>
+		</div>
+		<% end %>
+		<% end %>
+	</div>
+	<% end %>
+</div>

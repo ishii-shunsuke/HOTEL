@@ -54,64 +54,19 @@ user = User.new(
 	password: "hirosehirose")
 user.save!
 
-reservation = Reservation.new(
-	reservation_date:"2019-03-26",
-	checkout_date:"2019-03-27",
-	arrival_time:"15:25",
-	person:1,
-	room_count:2,
-	user_id:1)
-reservation.save!
-
-reservation = Reservation.new(
-	reservation_date:"2019-05-01",
-	checkout_date:"2019-05-02",
-	arrival_time:"19:55",
-	person:2,
-	room_count:2,
-	user_id:2)
-reservation.save!
-
-reservation = Reservation.new(
-	reservation_date:"2019-10-06",
-	checkout_date:"2019-10-08",
-	arrival_time:"16:00",
-	person:1,
-	room_count:3,
-	user_id:3)
-reservation.save!
-
-reservation = Reservation.new(
-	reservation_date:"2019-08-10",
-	checkout_date:"2019-08-11",
-	arrival_time:"22:00",
-	person:3,
-	room_count:3,
-	user_id:4)
-reservation.save!
-
-
 
 plan = Plan.new(
 	plan_name:"スタンダードプラン（素泊まり）",
 	plan_description: "・出張などビジネスでのお客様も、ご家族やカップル、お友達同士などでお出掛けの
 	お客様にも、幅広くご利用頂けます",
-	plan_image_id:1,
-	price: 5000,
-	room_type_id:1,
-    user_id:1,
-    reservation_id:1)
+	plan_image_id:1)
 plan.save!
 
 plan = Plan.new(
 	plan_name:"スタンダードプラン（朝食付き）",
 	plan_description: "・お客様の一日のスタートを幸せで満たしたい・・・
 	その一心で誕生した朝食を、ぜひ一度お試しください！",
-	plan_image_id:1,
-	price: 6000,
-	room_type_id:2,
-    user_id:2,
-    reservation_id:2)
+	plan_image_id:1)
 plan.save!
 
 plan = Plan.new(
@@ -120,25 +75,127 @@ plan = Plan.new(
 	滞在中１００タイトル以上の映画・ドラマ・コメディなどが見放題！！
 	さらにインターネットが利用が無料！！
 	たまにはゆっくり映画鑑賞でもいかがですか？",
-	plan_image_id:1,
-	price: 6000,
-	room_type_id:3,
-    user_id:3,
-    reservation_id:3)
+	plan_image_id:1)
 plan.save!
 
-# plan = Plan.new(
-# 	plan_name:"映画見放題プラン（朝食付き）",
-# 	plan_description: "・映画見放題と朝食付きのセットプラン",
-# 	plan_image_id:1,
-# 	price: 7000,
-# 	room_type_id:4,
-#     user_id:4,
-#     reservation_id:4)
-# plan.save!
+plan = Plan.new(
+    plan_name:"映画見放題プラン（朝食付き）",
+ 	plan_description: "・映画見放題と朝食付きのセットプラン",
+ 	plan_image_id:1)
+ plan.save!
 
 
-RoomType.create(room_type_name:"シングルルーム（喫煙）", plan_id: 1)
-RoomType.create(room_type_name:"シングルルーム（禁煙）", plan_id: 2)
-RoomType.create(room_type_name:"ダブルルーム（喫煙）",   plan_id: 3)
-RoomType.create(room_type_name:"ダブルルーム（禁煙）",   plan_id: 1)
+room_type = RoomType.new(
+	room_type_name:"シングルルーム（喫煙）")
+room_type.save!
+
+room_type = RoomType.new(
+	room_type_name:"シングルルーム（禁煙）")
+room_type.save!
+
+room_type = RoomType.new(
+	room_type_name:"ダブルルーム（喫煙）")
+room_type.save!
+
+room_type = RoomType.new(
+	room_type_name:"ダブルルーム（禁煙）")
+room_type.save!
+
+
+
+room = Room.new(
+	plan_id:1,
+	room_type_id:1,
+    price: 5000)
+room.save!
+
+room = Room.new(
+	plan_id:1,
+	room_type_id:2,
+	price: 5000)
+room.save!
+
+room = Room.new(
+	plan_id:1,
+	room_type_id:3,
+	price: 5500)
+room.save!
+
+room = Room.new(
+	plan_id:1,
+	room_type_id:4,
+	price: 5500)
+room.save!
+
+room = Room.new(
+	plan_id:2,
+	room_type_id:1,
+	price: 6000)
+room.save!
+
+room = Room.new(
+	plan_id:2,
+	room_type_id:2,
+	price: 6000)
+room.save!
+
+room = Room.new(
+	plan_id:2,
+	room_type_id:3,
+	price: 6500)
+room.save!
+
+room = Room.new(
+	plan_id:2,
+	room_type_id:4,
+	price: 6500)
+room.save!
+
+room = Room.new(
+	plan_id:3,
+	room_type_id:1,
+	price: 6000)
+room.save!
+
+room = Room.new(
+	plan_id:3,
+	room_type_id:2,
+	price: 6000)
+room.save!
+
+room = Room.new(
+	plan_id:3,
+	room_type_id:3,
+	price: 6500)
+room.save!
+
+room = Room.new(
+	plan_id:3,
+	room_type_id:4,
+	price: 6500)
+room.save!
+
+room = Room.new(
+	plan_id:4,
+	room_type_id:1,
+	price: 7000)
+room.save!
+
+room = Room.new(
+	plan_id:4,
+	room_type_id:2,
+	price: 7000)
+room.save!
+
+room = Room.new(
+	plan_id:4,
+	room_type_id:3,
+	price: 7500)
+room.save!
+
+room = Room.new(
+	plan_id:4,
+	room_type_id:4,
+	price: 7500)
+room.save!
+
