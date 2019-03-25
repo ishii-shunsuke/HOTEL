@@ -17,10 +17,25 @@
  @import "font-awesome-sprockets";
  @import "font-awesome";
 
-nav {
-	margin-bottom: 80px;
-	background-color: #8c6f6d;
+header {
+	margin-bottom: 72px;
 	color: black;
+}
+
+nav {
+	background-color: #4a4140;
+}
+
+.head {
+	color:grey;
+}
+
+.guest {
+	color: #fff;
+}
+
+.nav-link{
+	color:grey;
 }
 
 
