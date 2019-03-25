@@ -1,0 +1,47 @@
+<div class="container">
+	<div class="body">
+		<div class="row">
+			<div class="col text-center">
+				<h1 class="confirmation">ご予約内容確認</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<h3>ご宿泊プラン</h3>
+			</div>
+			<div class="col-md-9">
+				<h3><%= @room.plan.plan_name %></h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<h3>部屋タイプ</h3>
+			</div>
+			<div class="col-md-9">
+				<h3><%= @room.room_type.room_type_name %></h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<h3>ご宿泊料金</h3>
+			</div>
+			<div class="col-md-9">
+				<h3><%= @room.price %></h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<h3>変更・キャンセルについて</h3>
+			</div>
+			<div class="col-md-9">
+				<p>ご予約のキャンセルにつきましては、ご宿泊日から起算して下記の通り
+					キャンセル料を申し受けます。
+					◇ご宿泊日の2日前まで･･･無料
+					◇ご宿泊日の前日･･･宿泊料金の20％
+					◇ご宿泊当日･･･ 宿泊料金の80％
+				◇キャンセルのご連絡がなく不泊･･･宿泊料金の100％</p>
+			</div>
+		</div>
+		<%= link_to "予約する", users_plan_room_reservations_path(@plan.id,@room.id), method: :post,  class: "btn btn-success btn-sm" %>
+	</div>
+</div>

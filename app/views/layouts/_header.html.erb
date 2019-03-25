@@ -33,7 +33,7 @@
 
     <nav class="navbar navbar-expand-md fixed-top">
        <%= link_to root_path do %>
-       <h1>○○ホテル</h1>
+       <h1 class="head">webcampホテル</h1>
        <% end %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-header" aria-controls="navbar-header" aria-expanded="false" aria-label="ナビゲーションの切替">
         <span class="navbar-toggler-icon"></span>
@@ -59,7 +59,7 @@
       </div>
       <div class="float-right">
         <% if user_signed_in? %>
-          <span class="guest"><%= full_name(current_user) %>さん  こんにちは</span><br>
+          <span class="guest"><%= full_name(current_user) %>様  こんにちは</span><br>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete, data: {"turbolinks" => false} %>
         <% else %>
           <%= link_to "ログイン", new_user_session_path %><br>

@@ -1,0 +1,27 @@
+<div class= "container">
+	<div class= "text-white">
+		<div class= "top-title">
+			<h3>管理者トップページ</h3>
+		</div>
+				<p>
+					<%=	link_to "宿泊プランの追加",new_admins_plan_path, class: "btn btn-primary btn-lg	btn-block admin-item"%>
+				</p>
+
+				<p>
+					<%=	link_to "宿泊プラン一覧",admins_plans_path, class: "btn btn-primary btn-lg	btn-block admin-item"%>
+				</p>
+
+				<p>
+					<%=	link_to "部屋タイプの追加",new_admins_room_type_path, class: "btn btn-primary btn-lg	btn-block admin-item"%>
+				</p>
+
+				<p>
+					<%=	link_to "ユーザー検索・予約日検索",admins_users_path, class: "btn btn-primary btn-lg	btn-block admin-item"%>
+				</p>
+
+				<p>
+					<%=	link_to "データ分析",admins_reservations_path, class: "btn btn-primary btn-lg	btn-block admin-item"%>
+				</p>
+	</div>
+</div>
+

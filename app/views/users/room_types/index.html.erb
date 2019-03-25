@@ -1,0 +1,21 @@
+<div class="container">
+	<div class="body">
+		<div class="row">
+			<div class="col text-center">
+				<h1 class="information">客室情報</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col text-center">
+				<h3>客室タイプ</h3>
+			</div>
+		</div>
+		<% @room_types.each do |room_type| %>
+		<div class="row">
+			<div class="col text-center">
+				<h5><%= room_type.room_type_name %></h5>
+			</div>
+		</div>
+        <% end %>
+	</div>
+</div>
