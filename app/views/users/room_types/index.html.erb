@@ -2,7 +2,7 @@
 	<div class="body">
 		<div class="row">
 			<div class="col text-center">
-				<h1 class="information">客室情報</h1>
+				<h1 class="room_type-information">客室情報</h1>
 			</div>
 		</div>
 		<div class="row">
@@ -11,6 +11,7 @@
 			</div>
 		</div>
 		<% @room_types.each do |room_type| %>
+		<div class="border"></div>
 		<div class="row">
 			<div class="col text-center">
 				<h5><%= room_type.room_type_name %></h5>
