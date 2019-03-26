@@ -1,5 +1,5 @@
 class Reservation < ApplicationRecord
 
  belongs_to :user, optional: true
- belongs_to :plan
+ belongs_to :room
 end

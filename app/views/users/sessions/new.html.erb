@@ -1,11 +1,11 @@
-<div class= title>
-<h2 class="text-black">ログインページ</h2>
-</div>
+<div class="row">
+  <div class= "col text-center">
+    <h2 class="text-black login-title">ログインページ</h2>
 
-<% if admin_signed_in? %>
-  <p style="text-align: center;">管理者はユーザーログイン出来ません</p>
-<% else %>
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <% if admin_signed_in? %>
+    <p style="text-align: center;">管理者はユーザーログイン出来ません</p>
+    <% else %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
     <div class="color-red center text-big">
       <%= alert %>
@@ -22,8 +22,10 @@
     </div>
 
     <div class="actions center year text-big">
-      <%= f.submit "ログイン" %>
+      <%= f.submit "ログイン", class: "btn btn-primary" %>
     </div>
 
-  <% end %>
-<% end %>
+    <% end %>
+    <% end %>
+  </div>
+</div>

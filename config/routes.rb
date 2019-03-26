@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
-  namespace :users do
-    get 'rooms/new'
-  end
+
   devise_for :admins, controllers: {
   sessions:      'admins/sessions',
   passwords:     'admins/passwords',
@@ -17,6 +15,7 @@ Rails.application.routes.draw do
 
   root 'users/reservations#top'
   get '/admins/top', to:'admins/reservations#top'
+  get '/users', to:'users#show', as:'users'
 
   namespace :users do
     resources :facilities do
@@ -27,19 +26,16 @@ Rails.application.routes.draw do
     end
 
     resources :reservations do
-      member do
-        get :destroy_when_reservation
-      end
-      collection do
-        get :destroy_complete
-      end
+
     end
     resources :plans do
       resources :rooms do
-        resources :reservations
+        resources :reservations do
       end
     end
+  end
 
+    get 'reservation_cancel' => 'reservations#destroy_complete', as: 'reservation_cancel'
 
     resources :room_types, only: [:index]
   end
