@@ -106,96 +106,131 @@ room_type.save!
 room = Room.new(
 	plan_id:1,
 	room_type_id:1,
-    price: 5000)
+    price: 5000,
+    person:1,
+    room_count:1)
 room.save!
 
 room = Room.new(
 	plan_id:1,
 	room_type_id:2,
-	price: 5000)
+	price: 5000,
+	person:1,
+    room_count:1)
 room.save!
 
 room = Room.new(
 	plan_id:1,
 	room_type_id:3,
-	price: 5500)
+	price: 5500,
+	person:1,
+    room_count:1)
 room.save!
 
 room = Room.new(
 	plan_id:1,
 	room_type_id:4,
-	price: 5500)
+	price: 5500,
+	person:1,
+    room_count:1)
 room.save!
 
 room = Room.new(
 	plan_id:2,
 	room_type_id:1,
-	price: 6000)
+	price: 6000,
+	person:1,
+    room_count:1)
 room.save!
 
 room = Room.new(
 	plan_id:2,
 	room_type_id:2,
-	price: 6000)
+	price: 6000,
+	person:1,
+    room_count:1)
 room.save!
 
 room = Room.new(
 	plan_id:2,
 	room_type_id:3,
-	price: 6500)
+	price: 6500,
+	person:1,
+    room_count:1)
 room.save!
 
 room = Room.new(
 	plan_id:2,
 	room_type_id:4,
-	price: 6500)
+	price: 6500,
+	person:1,
+    room_count:1)
 room.save!
 
 room = Room.new(
 	plan_id:3,
 	room_type_id:1,
-	price: 6000)
+	price: 6000,
+	person:1,
+    room_count:1)
 room.save!
 
 room = Room.new(
 	plan_id:3,
 	room_type_id:2,
-	price: 6000)
+	price: 6000,
+	person:1,
+    room_count:1)
 room.save!
 
 room = Room.new(
 	plan_id:3,
 	room_type_id:3,
-	price: 6500)
+	price: 6500,
+	person:1,
+    room_count:1)
 room.save!
 
 room = Room.new(
 	plan_id:3,
 	room_type_id:4,
-	price: 6500)
+	price: 6500,
+	person:1,
+    room_count:1)
 room.save!
 
 room = Room.new(
 	plan_id:4,
 	room_type_id:1,
-	price: 7000)
+	price: 7000,
+	person:1,
+    room_count:1)
 room.save!
 
 room = Room.new(
 	plan_id:4,
 	room_type_id:2,
-	price: 7000)
+	price: 7000,
+	person:1,
+    room_count:1)
 room.save!
 
 room = Room.new(
 	plan_id:4,
 	room_type_id:3,
-	price: 7500)
+	price: 7500,
+	person:1,
+    room_count:1)
 room.save!
 
 room = Room.new(
 	plan_id:4,
 	room_type_id:4,
-	price: 7500)
+	price: 7500,
+	person:1,
+    room_count:1)
 room.save!
+
+admin = Admin.new(email:"admin@admin", password: "aaaaaa")
+admin.save!
 

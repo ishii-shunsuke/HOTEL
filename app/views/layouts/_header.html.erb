@@ -12,16 +12,19 @@
             <%= link_to "トップ", admins_top_path, class:"nav-link", data: {"turbolinks" => false} %> <span class="sr-only">(現位置)</span>
           </li>
           <li class="nav-item">
-            <%= link_to '商品追加', new_admins_product_path, class:"nav-link", data: {"turbolinks" => false} %>
+            <%= link_to '宿泊プランの追加',new_admins_plan_path, class:"nav-link", data: {"turbolinks" => false} %>
           </li>
           <li class="nav-item">
-            <%= link_to '商品一覧', admins_products_path, class:"nav-link", data: {"turbolinks" => false} %>
+            <%= link_to '宿泊プラン一覧',admins_plans_path, class:"nav-link", data: {"turbolinks" => false} %>
           </li>
           <li class="nav-item">
-            <%= link_to 'ユーザー一覧', admins_users_path, class:"nav-link", data: {"turbolinks" => false} %>
+            <%= link_to '部屋タイプの追加',new_admins_room_type_path, class:"nav-link", data: {"turbolinks" => false} %>
           </li>
           <li class="nav-item">
-            <%= link_to '購入履歴一覧', admins_orders_path, class:"nav-link", data: {"turbolinks" => false} %>
+            <%= link_to 'ユーザー検索・予約日検索',admins_users_path, class:"nav-link", data: {"turbolinks" => false} %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'データ分析',admins_reservations_path, class:"nav-link", data: {"turbolinks" => false} %>
           </li>
         </ul>
       </div>
@@ -41,9 +44,6 @@
       <div class="collapse navbar-collapse navnav" id="navbar-header">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <%= link_to "TOP", root_path, class:"nav-link", data: {"turbolinks" => false} %> <span class="sr-only">(現位置)</span></a>
-          </li>
-          <li class="nav-item">
             <%= link_to  "基本情報", users_facilities_path , class:"nav-link", data: {"turbolinks" => false} %>
           </li>
           <li class="nav-item">
@@ -54,6 +54,11 @@
           </li>
           <li class="nav-item">
             <%= link_to "レストラン情報", restaurant_users_facilities_path, class:"nav-link", data: {"turbolinks" => false} %>
+          </li>
+        </ul>
+        <ul class="navbar-nav right float-right">
+          <li class="nav-item big">
+            <%= link_to '宿泊予約ページへ', new_users_reservation_path, class:"nav-color", data: {"turbolinks" => false} %>
           </li>
           <li class="nav-item">
             <%= link_to 'マイページ', users_path, class:"nav-link", data: {"turbolinks" => false} %>

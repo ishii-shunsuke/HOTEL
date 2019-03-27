@@ -2,7 +2,6 @@ class Users::ReservationsController < ApplicationController
 
 
     def top
-        @search = Reservation.search(params[:q])
     end
 
     def new
