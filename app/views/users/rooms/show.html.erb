@@ -9,31 +9,34 @@
 			<div class="col-md-3">
 				<h3>ご宿泊プラン</h3>
 			</div>
-			<div class="col-md-9">
+			<div class="col-md-8 offset-1">
 				<h3><%= @room.plan.plan_name %></h3>
 			</div>
 		</div>
+		<div class="border"></div>
 		<div class="row">
 			<div class="col-md-3">
 				<h3>部屋タイプ</h3>
 			</div>
-			<div class="col-md-9">
+			<div class="col-md-8 offset-1">
 				<h3><%= @room.room_type.room_type_name %></h3>
 			</div>
 		</div>
+		<div class="border"></div>
 		<div class="row">
 			<div class="col-md-3">
 				<h3>ご宿泊料金</h3>
 			</div>
-			<div class="col-md-9">
-				<h3><%= @room.price %></h3>
+			<div class="col-md-8 offset-1">
+				<h3><%= @room.sum_of_price %>円</h3>
 			</div>
 		</div>
+		<div class="border"></div>
 		<div class="row">
 			<div class="col-md-3">
 				<h3>変更・キャンセルについて</h3>
 			</div>
-			<div class="col-md-9">
+			<div class="col-md-8 offset-1">
 				<p>ご予約のキャンセルにつきましては、ご宿泊日から起算して下記の通り
 					キャンセル料を申し受けます。
 					◇ご宿泊日の2日前まで･･･無料
@@ -42,6 +45,42 @@
 				◇キャンセルのご連絡がなく不泊･･･宿泊料金の100％</p>
 			</div>
 		</div>
-		<%= link_to "予約する", users_plan_room_reservations_path(@plan.id,@room.id), method: :post,  class: "btn btn-success btn-sm" %>
+		<div class="border"></div>
+		<%= form_for(@room,:url => {:controller => :rooms, :action => :update}) do |f| %>
+		<div class="row">
+			<div class="col-md-3">
+				<h3 class="reservation-date">予約日指定</h3>
+			</div>
+			<div class="input col-md-2 offset-1">
+				<%= f.label :reservation_date,"チェックイン" %>
+				<%= f.text_field :reservation_date, class: 'date-picker', placeholder: "日付入力" %>
+			</div>
+			<div class="input col-md-2">
+				<%= f.label :checkout_date,"チェックアウト" %>
+				<%= f.text_field :checkout_date, class: 'date-picker', placeholder: "日付入力" %>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<h3 class="reservation-date">人数・部屋数指定</h3>
+			</div>
+			<div class="col-md-2 offset-1">
+			<%= f.label :person,"人数" %>
+			<%= f.number_field :person, min:1 %>
+		    </div>
+		    <div class="col-md-2">
+			<%= f.label :room_count,"部屋数" %>
+			<%= f.number_field :room_count, min:1 %>
+		    </div>
+		</div>
+		<div class="row">
+			<div class="col text-center">
+				<%= f.submit '更新', class:"ml-4" %>
+			</div>
+		</div>
+		<% end %>
+		<div class="border"></div>
+		<div class="text-center"><%= link_to "この条件で予約する", users_plan_room_reservations_path(@plan.id,@room.id), method: :post,  class: "btn btn-success" %>
+		</div>
 	</div>
 </div>

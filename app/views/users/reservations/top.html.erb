@@ -1,27 +1,5 @@
 <div class="top-image">
- <div class="container">
-	<%= search_form_for(@search, url: new_users_reservation_path, method: :get) do |f| %>
-	<div class="row">
-		<div class="input col-md-2">
-			<%= f.label :reservation_date,"チェックイン" %>
-			<%= f.text_field :reservation_date, class: 'date-picker', placeholder: "日付入力" %>
-		</div>
-		<div class="input col-md-2">
-			<%= f.label :checkout_date,"チェックアウト" %>
-			<%= f.text_field :checkout_date, class: 'date-picker', placeholder: "日付入力" %>
-		</div>
-		<div class="col-md-2">
-			<%= f.label :person,"人数" %>
-			<%= f.number_field :person, min:1, :value => 1 %>
-		</div>
-		<div class="col-md-2">
-			<%= f.label :room_count,"部屋数" %>
-			<%= f.number_field :room_count, min:1, :value => 1 %>
-		</div>
-		<div class="col-md-2">
-			<%= f.submit "検索する", class: "btn btn-success btn-enter mt-4" %>
-		</div>
-	</div>
-	<% end %>
- </div>
+
 </div>
+
+

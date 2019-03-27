@@ -63,13 +63,13 @@
                     <tbody>
                         <% @reservations.each do |reservation|%>
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td><%= reservation.room.reservation_date %></td>
+                                <td><%= reservation.room.checkout_date %></td>
+                                <td><%= reservation.room.person %></td>
+                                <td><%= reservation.room.room_count %></td>
                                 <td><%= reservation.room.plan.plan_name %></td>
                                 <td><%= reservation.room.room_type.room_type_name %></td>
-                                <td><%= reservation.room.price %></td>
+                                <td><%= reservation.room.sum_of_price %>円</td>
                                 <td><%= link_to "キャンセル", users_reservation_path(reservation.id), method: :delete,"data-confirm" => "予約キャンセルしますか？", class: "btn-sm btn-danger" %></td>
                         <% end %>
                     </tbody>
