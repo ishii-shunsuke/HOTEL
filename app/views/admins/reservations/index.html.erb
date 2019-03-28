@@ -1,11 +1,14 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
+
 　<title>グラフ</title>
+
 </head>
 <body>
   <h2 class="text-center">データ分析</h2>
   <canvas id="myBarChart"></canvas>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 
   <script>
@@ -15,6 +18,7 @@
     data: {
       labels: ['プラン別'],
       datasets: [
+
         {
           label: 'スタンダードプラン（素泊まり）',
           data: [gon.reservations_A],
@@ -32,6 +36,7 @@
           data: [gon.reservations_D],
           backgroundColor: "rgba(50,54,83,0.5)"
         }
+
       ]
     },
     options: {
