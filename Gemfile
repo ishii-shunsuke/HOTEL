@@ -72,4 +72,6 @@ gem "pry-rails"
 gem 'geocoder'
 gem 'font-awesome-sass', '5.3.1'
 gem "ransack"
+gem 'kaminari'
+gem 'gon'
 

@@ -1,2 +1,83 @@
-<h1>Admins::Users#show</h1>
-<p>Find me in app/views/admins/users/show.html.erb</p>
+<main>
+    <div class="container">
+        <div class="row text-muted p-4">
+            <div class="col text-center">
+                <h3 class="text-dark">お客様情報</h3>
+                    <table class="table">
+                            <tr>
+                                <th>姓</th>
+                                <td><%= @user.last_name %></td>
+                            </tr>
+                            <tr>
+                                <th>名</th>
+                                <td><%= @user.first_name %></td>
+                            </tr>
+                            <tr>
+                                <th>姓(カナ)</th>
+                                <td><%= @user.last_name_kana %></td>
+                            </tr>
+                            <tr>
+                                <th>名(カナ)</th>
+                                <td><%= @user.first_name_kana %></td>
+                            </tr>
+                            <tr>
+                                <th>メールアドレス</th>
+                                <td><%= @user.email %></td>
+                            </tr>
+                            <tr>
+                                <th>電話番号</th>
+                                <td><%= @user.phone_number %></td>
+                            </tr>
+                            <tr>
+                                <th>都道府県</th>
+                                <td><%= @user.prefectures %></td>
+                            <tr>
+                                <th>市町村</th>
+                                <td><%= @user.city %></td>
+                            </tr>
+                            <tr>
+                                <th>番地・建物名</th>
+                                <td><%= @user.block %></td>
+                            </tr>
+                    </table>
+            </div>
+        </div>
+        <div class="row text-muted p-4">
+            <div class="col text-center">
+            <h3 class="text-dark">予約一覧</h3>
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>チェックイン日</th>
+                            <th>チェックアウト</th>
+                            <th>人数</th>
+                            <th>部屋数</th>
+                            <th>プラン名</th>
+                            <th>部屋タイプ</th>
+                            <th>価格</th>
+                            <th>予約キャンセル</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @reservations.each do |reservation|%>
+                            <tr>
+                                <td><%= reservation.room.reservation_date %></td>
+                                <td><%= reservation.room.checkout_date %></td>
+                                <td><%= reservation.room.person %></td>
+                                <td><%= reservation.room.room_count %></td>
+                                <td><%= reservation.room.plan.plan_name %></td>
+                                <td><%= reservation.room.room_type.room_type_name %></td>
+                                <td><%= reservation.room.sum_of_price %>円</td>
+                                <td><%= link_to "キャンセル", admins_reservation_path(reservation.id), method: :delete,"data-confirm" => "予約キャンセルしますか？", class: "btn-sm btn-danger" %></td>
+                        <% end %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center">
+                <%= link_to "戻る", admins_users_path, class: "btn btn-primary" %>
+            </div>
+        </div>
+    </div>
+</main>
