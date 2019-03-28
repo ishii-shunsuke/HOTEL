@@ -1,0 +1,58 @@
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+　<title>グラフ</title>
+</head>
+<body>
+  <h2 class="text-center">データ分析</h2>
+  <canvas id="myBarChart"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+
+  <script>
+  var ctx = document.getElementById("myBarChart");
+  var myBarChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['プラン別'],
+      datasets: [
+        {
+          label: 'スタンダードプラン（素泊まり）',
+          data: [gon.reservations_A],
+          backgroundColor: "rgba(219,39,91,0.5)"
+        },{
+          label: 'スタンダードプラン（朝食付き）',
+          data: [gon.reservations_B],
+          backgroundColor: "rgba(130,201,169,0.5)"
+        },{
+          label: '映画見放題プラン（素泊まり）',
+          data: [gon.reservations_C],
+          backgroundColor: "rgba(255,183,76,0.5)"
+        },{
+          label: '映画見放題プラン（朝食付き）',
+          data: [gon.reservations_D],
+          backgroundColor: "rgba(50,54,83,0.5)"
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'プラン別 予約数'
+      },
+      scales: {
+        yAxes: [{
+          ticks: {
+            suggestedMax: 15,
+            suggestedMin: 0,
+            stepSize: 1,
+            callback: function(value, index, values){
+              return  value +  ''
+            }
+          }
+        }]
+      },
+    }
+  });
+  </script>
+</body>
+</html>
