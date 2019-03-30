@@ -1,0 +1,37 @@
+<div class="container">
+	<div class="row">
+		<div class="col text-center">
+			<h2>プラン詳細</h2>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-2">
+			<h4>プラン名</h4>
+		</div>
+		<div class="col-md-8 offset-1">
+			<%= @plan.plan_name %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-2">
+			<h4>プラン説明</h4>
+		</div>
+		<div class="col-md-8 offset-1">
+			<%= @plan.plan_description %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-2">
+			<h4>プランイメージ画像</h4>
+		</div>
+		<div class="col-md-8 offset-1">
+            <%= attachment_image_tag @plan,:plan_image, fallback: "no_image.jpg", size: '100x100' %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col text-center">
+			<%= link_to "編集", edit_admins_plan_path(@plan.id), class: "btn btn-success btn-enter mb-4" %>
+			<%= link_to "削除", admins_plan_path(@plan.id), method: :delete, "data-confirm" => "プランを削除しますか？", class: "btn btn-danger btn-enter mb-4" %>
+		</div>
+	</div>
+</div>

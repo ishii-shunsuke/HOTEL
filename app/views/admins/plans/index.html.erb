@@ -1,0 +1,28 @@
+<main>
+  <div class="container text-black">
+      <h1 class="user-title text-center">プラン一覧</h1>
+
+        <%= search_form_for(@search, url: admins_plans_path, method: :get) do |f| %>
+            <%= f.text_field :plan_name_cont %>
+            <%= f.submit "検索", class: "btn btn-danger ml-4" %>
+        <% end %>
+      <table class="table table-hover text-center mt-4" id="table-center">
+        <tr class="bg-light text-dark">
+          <td>プラン画像</td>
+          <td>プラン名</td>
+          <td>編集</td>
+          <td>削除</td>
+        </tr>
+        <% @plans.each do |plan| %>
+          <tr>
+            <td><%= attachment_image_tag plan,:plan_image, fallback: "no_image.jpg", size: '100x100' %></td>
+            <td><%= link_to plan.plan_name, admins_plan_path(plan.id) %></td>
+            <td><%= link_to "編集", edit_admins_plan_path(plan.id), class: "btn btn-success btn-enter mb-4" %></td>
+            <td><%= link_to "削除", admins_plan_path(plan.id), method: :delete, "data-confirm" => "プランを削除しますか？", class: "btn btn-danger btn-enter mb-4" %></td>
+          </tr>
+        <% end %>
+      </table>
+  </div>
+
+    <%= paginate @plans %>
+</main>

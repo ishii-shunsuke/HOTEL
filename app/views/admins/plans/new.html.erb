@@ -4,12 +4,35 @@
 			<h2>プラン追加</h2>
 		</div>
 	</div>
+	<%= form_for(@plan, :url => {:action => :create}) do |f| %>
 	<div class="row">
 		<div class="col-md-2">
 			<h4>プラン名</h4>
 		</div>
 		<div class="col-md-8 offset-1">
-			
+			<%= f.text_field :plan_name, autofocus: true %>
 		</div>
 	</div>
+	<div class="row">
+		<div class="col-md-2">
+			<h4>プラン説明</h4>
+		</div>
+		<div class="col-md-8 offset-1">
+			<%= f.text_area :plan_description, autofocus: true %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-2">
+			<h4>プランイメージ画像</h4>
+		</div>
+		<div class="col-md-8 offset-1">
+　　　　　　　<%= f.attachment_field :plan_image, placeholder: "プラン画像", fallback: "no_image.jpg", size: '100×100', class:"plan_jucket"%>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col text-center">
+			<%= f.submit "プラン追加", class: "btn btn-succcess" %>
+		</div>
+	</div>
+	<% end %>
 </div>
