@@ -1,6 +1,14 @@
 class Admins::PlansController < ApplicationController
 
 
+  before_action :authenticate_admin!
+
+
+  def index
+   	  @search = Plan.page(params[:page]).ransack(params[:q])
+   	  @plans = @search.result
+  end
+
 
 	def new
 		@plan = Plan.new
@@ -29,10 +37,16 @@ class Admins::PlansController < ApplicationController
 		redirect_to admins_plan_path(@plan.id)
 	end
 
+	def destroy
+		@plan = Plan.find(params[:id])
+		@plan.destroy
+		redirect_to admins_plans_path
+	end
+
 
 	private
 	def plan_params
-		params.require(:plan).permit(:plan_name, :plan_description, :plan_image_id, :price)
+		params.require(:plan).permit(:plan_name, :plan_description, :plan_image, :price)
 	end
 
 end
