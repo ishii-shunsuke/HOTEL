@@ -1,0 +1,42 @@
+<div class="container">
+	<div class="row">
+		<div class="col text-center">
+			<h2>プラン編集</h2>
+		</div>
+	</div>
+	<%= form_for(@plan, :url => {:action => :update}) do |f| %>
+	<div class="border"></div>
+	<div class="row">
+		<div class="col-md-2 offset-2">
+			<h4>プラン名</h4>
+		</div>
+		<div class="col-md-6 offset-1">
+			<%= f.text_field :plan_name, autofocus: true %>
+		</div>
+	</div>
+	<div class="border"></div>
+	<div class="row">
+		<div class="col-md-2 offset-2">
+			<h4>プラン説明</h4>
+		</div>
+		<div class="col-md-6 offset-1">
+			<%= f.text_area :plan_description, autofocus: true %>
+		</div>
+	</div>
+	<div class="border"></div>
+	<div class="row">
+		<div class="col-md-2 offset-2">
+			<h4>プランイメージ画像</h4>
+		</div>
+		<div class="col-md-6">
+　　　　　　　<%= f.attachment_field :plan_image, placeholder: "プラン画像", fallback: "no_image.jpg", size: '100×100', class:"plan_jucket"%>
+		</div>
+	</div>
+	<div class="border"></div>
+	<div class="row">
+		<div class="col text-center">
+			<%= f.submit "編集完了", class: "btn btn-success" %>
+		</div>
+	</div>
+	<% end %>
+</div>
