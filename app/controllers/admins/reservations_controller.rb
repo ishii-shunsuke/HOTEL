@@ -1,5 +1,7 @@
 class Admins::ReservationsController < ApplicationController
 
+    before_action :authenticate_admin!
+
 
     def index
     	gon.reservations_A = Reservation.where(plan_id: 1).count
